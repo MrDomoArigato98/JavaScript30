@@ -69,25 +69,27 @@
       if (a.year > b.year) return -1
       if (a.year == b.year) return 0
     });
-    console.table(sorted)
+    // console.table(sorted)
 
+    // Sorts by defining a function and calling it
     let sortingFunction = (a,b) =>{
       if (a.year > b.year) return 1
       if (a.year > b.year) return -1
       if (a.year == b.year) return 0
     }
     const sortedAgain = inventors.sort(sortingFunction)
-    console.table(sortedAgain)
+    // console.table(sortedAgain)
 
+    //Sorts using a ternary operator
     const sortedAgainAgain = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
     console.table(sortedAgainAgain)
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
     
-    const sumYears = inventors.reduce((total, inventors) =>{
-      return total += inventors.year - inventors.passed
-    });
-    console.log(sumYears)
+    const totalYears = inventors.reduce((total, inventor) =>{
+      return total + (inventor.passed - inventor.year)
+    },0);
+    console.log(totalYears)
 
     // 5. Sort the inventors by years lived
 
