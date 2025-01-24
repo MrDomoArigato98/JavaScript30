@@ -74,7 +74,13 @@
     });
     console.table(sorted)
 
-
+    let sortingFunction = (a,b) =>{
+      if (a.year > b.year) return 1
+      if (a.year > b.year) return -1
+      if (a.year == b.year) return 0
+    }
+    const sortedAgain = inventors.sort(sortingFunction)
+    console.table(sortedAgain)
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
 
