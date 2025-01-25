@@ -28,12 +28,18 @@
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
     // Array.prototype.every() // is everyone 19 or older?
-    const nineteen = people.some(function(person){
+    const nineteenPerson = people.some(function(person){
       if (2025 - person.year >= 19)return true
     })
+    console.log(nineteenPerson)
 
-    const nineteenAgain = people.some((person)=> 2025 - person.year ? 1:0)
+    // The Ternary operator is unnecessary
+    const nineteenAgain = people.some((person)=> 2025 - person.year >=19 ? 1:0)
     console.log(nineteenAgain)
+
+    const everyone = people.every((person)=> 2025 - person.year >= 19 ? 1:0)
+    console.log(everyone)
+
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
@@ -48,6 +54,12 @@
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+
+    const removeId = comments.findIndex(function(comment){
+      if(comment.id == 823423) return true;
+    })
+
+    console.table(removeId)
 
   </script>
 </body>
